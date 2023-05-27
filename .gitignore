@@ -1,0 +1,6 @@
+# List the files to be ignore for a Go project.
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?

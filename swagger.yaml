@@ -1,0 +1,59 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: Simple Go Web Application
+
+paths:
+  /:
+    get:
+      summary: Retrieves a greeting message
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              count:
+                type: integer
+                example: 2
+              greetings:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    description:
+                      type: string
+                      example: "some description"
+                    tags:
+                      type: array
+                      items:
+                        type: string
+                      example:
+                        - "tag1"
+                    contents:
+                      type: array
+                      items:
+                        type: string
+                      example:
+                        - "line1"
+          examples:
+            application/json:
+              count: 2
+              greetings:
+                - description: "some description"
+                  tags:
+                    - "tag1"
+                    - "tag2"
+                  contents:
+                    - "line1"
+                    - "line2"
+                - description: "another description"
+                  tags:
+                    - "tag3"
+                  contents:
+                    - "line3"
+        # 405:
+        #   description: Invalid request method
+        #   example: "Only GET requests are allowed on this endpoint."
