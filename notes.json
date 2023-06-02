@@ -1,0 +1,1477 @@
+[
+    {
+        "id": 93,
+        "description": "vscode - insert multi line cursor in mac",
+        "tags": [
+            "vscode",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents": [
+            "Cmd + Option + Up/Down - to insert cursor at the beginning of lines up or below",
+            "Option + Shift + I - to insert cursor at the end of the selected lines"
+        ]
+    },
+    {
+        "id": 92,
+        "description": "gcp -  cloud functions: manage functions with gcloud CLI",
+        "tags": [
+            "commands",
+            "gcp",
+            "cloud functions"
+        ],
+        "contents": [
+            "# To list deployed functions",
+            "gcloud functions list",
+            "",
+            "# To deploy new functions or update an existing function",
+            "gcloud functions deploy",
+            "",
+            "# example: deploy a function with source code from local machine, python3.11 as runtime and pubsub topic as trigger",
+            "# To set up google cloud functions with environment variables specified in a yaml file, use `--env-vars-file` option",
+            "",
+            "    gcloud functions deploy my-gcp-func \\",
+            "        --gen2 \\",
+            "        --region=us-central1 \\ # region to deploy",
+            "        --runtime=python311 \\ # python 3.11 as the runtime",
+            "        --source=. \\ # deploy with source code from current directory on the local machine",
+            "        --entry-point=cloud_event_handler \\ # entry point function in main.py",
+            "        --trigger-topic=pubsub-topic \\",
+            "        --env-vars-file .env.yaml # file with list of environment variables to set up",
+            "",
+            "# Delete a cloud function",
+            "gcloud functions delete my-gcp-func",
+            "",
+            "# View logs from a cloud function",
+            "gcloud functions logs read my-gcp-func"
+        ]
+    },
+    {
+        "id": 91,
+        "description": "gcp - pubsub: interact with pubsub through gcloud CLI",
+        "tags": [
+            "commands",
+            "gcp",
+            "pubsub"
+        ],
+        "contents": [
+            "# To list subscribers of a topic",
+            "gcloud pubsub topics list-subscriptions my-pubsub-topic",
+            "",
+            "# To publish a message to pubsub topic",
+            "gcloud pubsub topics publish pubsub-topic1 --message \"hello,world\""
+        ]
+    },
+    {
+        "id": 90,
+        "description": "Download compressed data and uncompress with CURL",
+        "tags": [
+            "linux",
+            "commands",
+            "curl"
+        ],
+        "enabled": true,
+        "contents": [
+            "Add `--compressed` option to curl to auto decompress data after download.",
+            "e.g. curl --compressed https://api.stackexchange.com/2.2/sites"
+        ]
+    },
+    {
+        "id": 89,
+        "description": "tempfile in Python",
+        "tags": [
+            "python",
+            "programming"
+        ],
+        "enabled": true,
+        "contents": [
+            "Use tempfile.NamedTemporaryFile() callable to have a temporary file with a visible name",
+            "By default, file is opened in binary mode and is deleted on closing",
+            "Use \"w+\" to open in text mode.",
+            "Also works with context manager.",
+            ">>> with tempfile.NamedTemporaryFile() as fp:",
+            "...     fp.write(b'Hello world!')",
+            "...     fp.seek(0)",
+            "...     fp.read()",
+            "b'Hello world!'"
+        ]
+    },
+    {
+        "id": 88,
+        "description": "Python: Get home directory",
+        "tags": [
+            "programming",
+            "python"
+        ],
+        "enabled": true,
+        "contents": [
+            "Class method pathlib.Path.home() returns a new path object",
+            "representing user home directory (similar to os.path.expanduser(\"~\")",
+            "Path object also supports / operator, so Path.home()/subdir/file is also possible"
+        ]
+    },
+    {
+        "id": 87,
+        "description": "Find which shell I am in",
+        "tags": [
+            "linux",
+            "shell"
+        ],
+        "contents": [
+            "Run \"echo $SHELL\" ",
+            "root@88a325681e8c:/# echo $SHELL",
+            "/bin/bash"
+        ]
+    },
+    {
+        "id": 86,
+        "description": "Find system information from command line",
+        "tags": [
+            "linux",
+            "shell"
+        ],
+        "contents": [
+            "uname, uname -a",
+            "root@88a325681e8c:/# uname -a",
+            "Linux 88a325681e8c 4.9.184-linuxkit #1 SMP Tue Jul 2 22:58:16 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux",
+            ""
+        ]
+    },
+    {
+        "id": 85,
+        "description": "Find disk usage of directory and files with \"du\"",
+        "tags": [
+            "linux",
+            "shell",
+            "tools"
+        ],
+        "contents": [
+            "du -a - display an entry for each file in the directory",
+            "du -c - display a grand total",
+            "du -h - display info in human readable form (take optional unit suffixes (-m for MB, -g for GB))",
+            "du -d <depth> - stop at given depth level"
+        ]
+    },
+    {
+        "id": 84,
+        "description": "Access last executed command in shell",
+        "tags": [
+            "linux",
+            "shell"
+        ],
+        "contents": [
+            "Use \"!!\" to access the last ran command"
+        ]
+    },
+    {
+        "id": 83,
+        "description": "Get status of last command/process",
+        "tags": [
+            "linux",
+            "shell"
+        ],
+        "contents": [
+            "$? - return the status of the last command ran in shell"
+        ]
+    },
+    {
+        "id": 82,
+        "description": "Access arguments from last command",
+        "tags": [
+            "linux",
+            "programming",
+            "shell"
+        ],
+        "contents": [
+            "!^ - First argument",
+            "!$ - Last argument",
+            "!* - All arguments"
+        ]
+    },
+    {
+        "id": 81,
+        "description": "Colorize ls output",
+        "tags": [
+            "linux",
+            "shell"
+        ],
+        "contents": [
+            "ls --color=always (on most Linux)",
+            "ls -G (on macOS)"
+        ]
+    },
+    {
+        "id": 80,
+        "description": "List files with their disk usage",
+        "tags": [
+            "shell",
+            "linux"
+        ],
+        "contents": [
+            "$ ls -lash",
+            "Shows a **long** listing of **all** files along with their ",
+            "**actual file size in number of blocks** (typically 512 bytes) and ",
+            "file size in **human readable** form (e.g B for bytes, K for kilobytes, G for gigabytes etc)"
+        ]
+    },
+    {
+        "id": 79,
+        "description": "Supress newline character in shell",
+        "tags": [
+            "shell",
+            "linux"
+        ],
+        "contents": [
+            "`echo -n` - skips the trailing newline character",
+            "Note: some shells do not support -n option.",
+            "For portability, use printf instead."
+        ]
+    },
+    {
+        "id": 78,
+        "description": "Sort lines in shell",
+        "tags": [
+            "linux",
+            "shell"
+        ],
+        "contents": [
+            "sort - command to sort lines of text or binary data from standard input or a file descriptor.",
+            "Default order: lexicographic",
+            "-k <column number> - sort by a specific key",
+            "-n - sort numerically",
+            "-s - keep the sorting order stable"
+        ]
+    },
+    {
+        "id": 77,
+        "description": "Generate sequence of numbers",
+        "tags": [
+            "linux",
+            "shell"
+        ],
+        "contents": [
+            "seq - Generate sequence of numbers",
+            "starts from 1 and increments 1 by default",
+            "$ seq 4 // generate 1 to 4",
+            "$ seq 10 2 20 // generate 10 to 20, increment by 2"
+        ]
+    },
+    {
+        "id": 76,
+        "description": "Find system calls used by a program",
+        "tags": [
+            "linux",
+            "shell",
+            "programming"
+        ],
+        "contents": [
+            "strace <program>"
+        ]
+    },
+    {
+        "id": 75,
+        "description": "Find disk usage of files and directories",
+        "tags": [
+            "linux",
+            "shell"
+        ],
+        "contents": [
+            "du - find disk usage of a directory and its files",
+            "-a - display an entry for each file in the directory",
+            "-c - display a grand total",
+            "-h - display info in human readable form (take optional unit suffixes: -m for MB, -g for GB)",
+            "-d <depth> - stop at given depth level"
+        ]
+    },
+    {
+        "id": 74,
+        "description": "Where man pages are stored?",
+        "tags": [
+            "shell",
+            "linux"
+        ],
+        "contents": [
+            "Pages are searched first in the path given by option `-M` if specified.",
+            "If `-M` is not specified, then the path specified in `MANPATH` is looked up.",
+            "If neither `-M` nor `MANPATH` is specified, then the path to man pages is inferred from the config file.",
+            "In general, the default set of man pages live in `/usr/share/man/`",
+            "Applications can install in other paths too and update the `MANPATH` accordingly.",
+            "The location of the config file can differ based on the distribution.",
+            "/private/etc/man.conf - in macOS Mojave",
+            "/etc/man.config - in many linux distributions"
+        ]
+    },
+    {
+        "id": 73,
+        "description": "Convert epoch seconds into date",
+        "tags": [
+            "linux",
+            "commands",
+            "shell",
+            "datetime"
+        ],
+        "contents": [
+            "% date -r <seconds> # macOS",
+            "$ date -d @<seconds> # on most linux",
+            "$ date +%s # display current time in epoch seconds"
+        ]
+    },
+    {
+        "id": 72,
+        "description": "Toggle reader mode in Safari",
+        "tags": [
+            "macOS",
+            "shortcuts",
+            "safari"
+        ],
+        "contents": [
+            "`Cmd + Shift + R` - toggles reader mode on supported sites"
+        ]
+    },
+    {
+        "id": 71,
+        "description": "Find files modified in last x minutes or x days",
+        "tags": [
+            "shell",
+            "find",
+            "linux",
+            "commands"
+        ],
+        "contents": [
+            "`$ find . -mmin -60` - find files modified in the last 60 minutes in current directory",
+            "`$ find . -mtime -2` - find files modified in the last 48 hours in current directory"
+        ]
+    },
+    {
+        "id": 70,
+        "description": "Find files accessed in last x minutes or x days",
+        "tags": [
+            "shell",
+            "find",
+            "linux",
+            "commands"
+        ],
+        "contents": [
+            "`$ find . -amin -60` - find files modified in the last 60 minutes in current directory",
+            "`$ find . -atime -2` - find files modified in the last 48 hours in current directory"
+        ]
+    },
+    {
+        "id": 69,
+        "description": "sshpass - specify password for ssh/scp login non-interactively",
+        "tags": [
+            "shell",
+            "linux",
+            "commands",
+            "scp"
+        ],
+        "contents": [
+            "`sshpass -p <password> ssh user@host \"command to run\"` - Use the specified password to connect using ssh",
+            "`sshpass -p <password> scp <source> <destination>` - Use the specified password to connect using scp",
+            "`SSHPASS=password sshpass -e ssh user@host command` - Take the password from the environment variable SSHPASS"
+        ]
+    },
+    {
+        "id": 68,
+        "description": "scp - some helpful options (pqr)",
+        "tags": [
+            "shell",
+            "linux",
+            "commands",
+            "scp"
+        ],
+        "contents": [
+            "`-p` - Preserve modification times, access times, and modes",
+            "`-q` - Quiet mode: disables the progress meter as well as warning and diagnostic messages from ssh",
+            "`-r` - Recursively copy entire directories"
+        ]
+    },
+    {
+        "id": 67,
+        "description": "ssh options - Ignore host key checking",
+        "tags": [
+            "ssh",
+            "shell",
+            "commands",
+            "options"
+        ],
+        "contents": [
+            "`-o StrictHostKeyChecking=no` - automatically add new host keys to users known hosts file. Often not needed in controlled environments",
+            "`-o UserKnownHostsFile=/dev/null` - Use /dev/null instead of the default file (~/.ssh/known_hosts)",
+            "Set `StrictHostKeyChecking no` in .ssh/config under `Host <hostname>` to apply this to per hosts"
+        ]
+    },
+    {
+        "id": 66,
+        "description": "bash - a quick note on arrays",
+        "tags": [
+            "bash",
+            "shell",
+            "programming"
+        ],
+        "contents": [
+            "arr=() # Create empty array",
+            "arr+=(5) # Append a number to array",
+            "arr+=(xyz) # Append a text to array; arrays can have numbers and strings",
+            "${arr[@]} # Get all items from the array",
+            "${!arr[@]} # Get all indices of the array. Index starts at 0",
+            "${arr[3]} # Get the fourth item from the array",
+            "${arr} # Get first item from the array. Equivalent to ${arr[0]}",
+            "${arr[@]:i:n} # Get n elements starting at index i",
+            "arr=( $(cmd) ) # Save output of a command into an array",
+            "# Sample for loop",
+            "for item in ${arr[@]};do",
+            "    echo $item",
+            "done"
+        ]
+    },
+    {
+        "id": 65,
+        "description": "vim - show relative and absolute file path",
+        "tags": [
+            "vim",
+            "programming",
+            "editor",
+            "shortcuts"
+        ],
+        "contents": [
+            "Ctrl+G - shows the relative path of the current file",
+            "{n}Ctrl+G - shows the relative path of the nth file in the buffer",
+            "1Ctrl+G - shows the absolute path of the current file"
+        ]
+    },
+    {
+        "id": 64,
+        "description": "vim - set/toggle option",
+        "tags": [
+            "vim",
+            "shortcuts",
+            "editor",
+            "programming"
+        ],
+        "contents": [
+            ":set <option> - switches on a toggle option",
+            ":set <option>! - toggles the option",
+            ":set <option>? - shows the value of option",
+            "e.g :set nu - turns on the line number, :set nonumber - turns off the line number",
+            ":set nu! toggles the line number on or off,"
+        ]
+    },
+    {
+        "id": 63,
+        "description": "bash: read inputs",
+        "tags": [
+            "bash",
+            "programming",
+            "shell"
+        ],
+        "contents": [
+            "read var # gets the input from the user and assings to the variable \"var\"",
+            "read -p \"Prompt\" var # shows the prompt message",
+            "read -ps \"Prompt\" var # shows the prompt message, but keeps the input hidden.",
+            "# E.g.",
+            "# $ read -p \"Select: \" choice",
+            "# Select: 1",
+            "# $ echo $choice",
+            "# 1"
+        ]
+    },
+    {
+        "id": 62,
+        "description": "vscode: terminal shortcuts",
+        "tags": [
+            "vscode",
+            "shortcuts",
+            "terminal",
+            "productivity"
+        ],
+        "contents": [
+            "`Cmd + \\` - keyboard shortcut to split the terminal vertically",
+            "`Cmd + Option + Left` - focus to the window on the left",
+            "`Cmd + Option + Right` - focus to the window on the right",
+            "`Cmd + j` - hide the terminal window and focus on active editor group"
+        ]
+    },
+    {
+        "id": 61,
+        "description": "bash: arithmetic with let",
+        "tags": [
+            "bash",
+            "shell",
+            "programming"
+        ],
+        "contents": [
+            "let # evaluates each argument as an arithmetic expression",
+            "let a=1+9 # assigns a=10",
+            "# If spacing needed for better readability, enclose the expression between quotes",
+            "let \"b = 2 + 8\" # assigns b=10",
+            "# Take values from variables",
+            "let c=$a+$b # assigns sum of a and b to c",
+            "# No escaping needed for *",
+            "let \"d = $a * $b\" # assigns product of a and b to d",
+            "let d++ # increment d by 1 and assign to d"
+        ]
+    },
+    {
+        "id": 60,
+        "description": "bash: arithmetic with expr",
+        "tags": [
+            "bash",
+            "shell",
+            "programming"
+        ],
+        "contents": [
+            "expr 2 + 7 # evaluate the expression and writes to standard output. Spaces are needed between the tokens",
+            "# multiplication operator * need to be escaped",
+            "expr 7 * 3 # results in syntax error",
+            "expr 7 \\* 3 # evaluates to 21",
+            "e=$(expr 2 + 7) # evaluate the expression and assign. Similar to $((expression))",
+            "expr 2+7 # prints the expression as is without evaluating",
+            "expr \"2 + 7\" # prints the expression as is without evaluating even with quotes"
+        ]
+    },
+    {
+        "id": 59,
+        "description": "bash: arithmetic expansion",
+        "tags": [
+            "bash",
+            "shell",
+            "programming"
+        ],
+        "contents": [
+            "# $((expression)) - evaluates the expression and substitutes the result.",
+            "echo $((3+5)) # prints 8",
+            "# spaces are totally fine",
+            "f=$((4 + 4)) # evaluate the expression and assign the value to a variable",
+            "g=$((f * 2)) # variables inside the expression need not be specified with a preceding $ sign",
+            "echo $((g--)) $((g++)) # increment, decrement",
+            "echo ((g += 5) # assignment operators (= *= /= %= += -= <<= >>= &= ^= |=) are also supported"
+        ]
+    },
+    {
+        "id": 58,
+        "description": "ffmpeg2 - Convert video to gif",
+        "tags": [
+            "tools",
+            "ffmpeg"
+        ],
+        "contents": [
+            "# Supports multiple input file formats",
+            "# -r <frame rate>",
+            "# -vf <filter_graph> # e.g. -vf scale=w:hP",
+            "ffmpeg2 -i <input file> -r 10 output.gif",
+            "# set width to 320px and set height based on the width keeping the aspect ratio",
+            "ffmpeg2 -i <input file> -r 10 -vf scale=320:-1 output.gif"
+        ]
+    },
+    {
+        "id": 57,
+        "description": "bash: print values in hex",
+        "tags": [
+            "bash"
+        ],
+        "contents": [
+            "printf \"0x%x\\n\", 369098752 # prints the value in hex format. e.g. 0x16000000"
+        ]
+    },
+    {
+        "id": 56,
+        "description": "vim: yank shortcuts",
+        "tags": [
+            "vim",
+            "shortcuts"
+        ],
+        "contents": [
+            "`yw` - copy from current to start of the next word",
+            "`yb` - copy from current to beginning of the current word",
+            "`y$` - copy till the end of the line",
+            "`y0` - copy till the start of the line",
+            "`{n}Y` - copy n number of lines",
+            "`{n}yy` - copy n number of lines"
+        ]
+    },
+    {
+        "id": 55,
+        "description": "C: Get system time in epoch seconds (number of seconds since 1970-01-01 00:00:00 +0000 (UTC))",
+        "tags": [
+            "c",
+            "programming",
+            "datetime"
+        ],
+        "contents": [
+            "time_t curtime = time(NULL); // time() included from time.h",
+            "(void)time(&curtime); // also sets the seconds in the input buffer if given",
+            "// can also get the time in microsecond granularity with gettimeofday",
+            "struct timeval tm;",
+            "struct timezone tz",
+            "(void)gettimeofday(&tm, &tz); // included from sys/time.h",
+            "// tm.tv_sec - epoch time in seconds",
+            "// tm.tv_usec - microseconds",
+            "// tz.tz_dsttime - is Daylight Savings on?",
+            "// tz.tz_minuteswest - number of minutes from the GMT",
+            "printf(\"secs=%lu, msecs=%d, is_dst=%d, minutes_from_gmt=%d\n\", tm.tv_sec, tm.tv_usec, tz.tz_dsttime, tz.tz_minuteswest);",
+            "printf(\"timestamp=%s\", ctime(&tm.tv_sec)); // get clock time as a readable string",
+            "// ctime returns a pointer to statically allocated buffer holding the stamp.",
+            "// Subsequent calls to ctime() would overwrite the buffer. Use ctime_r() to write the string to user provided buffer instead."
+        ]
+    },
+    {
+        "id": 54,
+        "description": "bash: display information about a command type",
+        "tags": [
+            "shell",
+            "bash",
+            "programming"
+        ],
+        "contents": [
+            "type arg # arg can be a command, function, aliases an built-ins",
+            "type -a arg # display all locations containing an executable named NAME",
+            "type -t arg # output a single word which is one of alias, keyword, function, builtin, file",
+            "# e.g.",
+            "ubuntu@ubuntu-lts:~$ os_release()",
+            "> {",
+            ">     cat /etc/os-release",
+            "> }",
+            "ubuntu@ubuntu-lts:~$ type -t os_release",
+            "function",
+            "ubuntu@ubuntu-lts:~$ type -a os_release",
+            "os_release is a function",
+            "os_release ()",
+            "{",
+            "   cat /etc/os-release",
+            "}"
+        ]
+    },
+    {
+        "id": 53,
+        "description": "regex: filter ipv4 address",
+        "tags": [
+            "linux",
+            "tools",
+            "regex"
+        ],
+        "contents": [
+            "# regex pattern to filter IPv4 addresses",
+            "# upto 3 digits followed by ., repeated 3 times and up to 3 digits",
+            "# this is too generic. so invalid IPs like 333.232.444.999 would also be considered valid",
+            "ifconfig | egrep -o '([0-9]{1,3}\\.){3}[0-9]{1,3}'",
+            "# To search for only valid IP addr and output only the IP addr",
+            "ifconfig | egrep -o '((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'",
+            "# Skip localhost and subnet masks",
+            "ifconfig | egrep -o '((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)' | egrep -v '^255|127.0.0.1'"
+        ]
+    },
+    {
+        "id": 52,
+        "description": "sed - Get a line or range of lines",
+        "tags": [
+            "linux",
+            "tools",
+            "shell",
+            "sed"
+        ],
+        "contents": [
+            "# Get contents of line number n from file",
+            "# -n - tells sed not to print the lines unless explicity requested",
+            "# 'p' - print command",
+            "# 'q' - quit sed",
+            "sed -n '10p' # print line number 10, but will continue processing the rest of the file too",
+            "sed -n '10p;11q' # print line number 10 and quit processing",
+            "sed -n '5,10p;11q' # print line number from 5 to 10 and quit processing"
+        ]
+    },
+    {
+        "id": 51,
+        "description": "grep - find empty lines",
+        "tags": [
+            "linux",
+            "shell",
+            "tools",
+            "grep"
+        ],
+        "contents": [
+            "grep -n '^$' <file> # print line numbers of empty lines in the given file"
+        ]
+    },
+    {
+        "id": 50,
+        "description": "vim - clear all trailing whitespaces",
+        "tags": [
+            "linux",
+            "vim",
+            "tools"
+        ],
+        "contents": [
+            "\" function to clear trailing white spaces",
+            "fun! TrimTrailingWhiteSpace()",
+            "    let l:save = winsaveview()",
+            "    keeppatterns %s/\\s\\+$//e",
+            "    call winrestview(l:save)",
+            "    \" without saving and restoring the view, the cursor",
+            "    \" moves to the line of the last search result where",
+            "    \" the edit is made",
+            "endfun",
+            "",
+            "\" Use a shortcut to invoke the function",
+            "\" for e.g. I use the leader key \\ followed by w",
+            "\\ + w to clear the trailing whitespace",
+            ":noremap <Leader>w :call TrimTrailingWhiteSpace()<CR>"
+        ]
+    },
+    {
+        "id": 49,
+        "description": "openssl - show certificate validity",
+        "tags": [
+            "tools",
+            "openssl"
+        ],
+        "contents": [
+            "# show notBefore and notAfter date of the given certificate",
+            "openssl x509 -noout -startdate -enddate -in <certificate>",
+            "# print all details of the certificate in text format",
+            "openssl x509 -noout -text -in root_ca.crt"
+        ]
+    },
+    {
+        "id": 48,
+        "description": "Python: Get host name of the system",
+        "tags": [
+            "python",
+            "scripts"
+        ],
+        "contents": [
+            "import socket",
+            "print(socket.gethostname()) # print hostname to stdout"
+        ]
+    },
+    {
+        "id": 47,
+        "description": "Python: Get interpreter history",
+        "tags": [
+            "python",
+            "programming"
+        ],
+        "contents": [
+            "# History of commands run in python interpreter are cached at $HOME/.python_history",
+            "# readline module provides the methods to access the entries from the underlying history buffer",
+            "# readline.get_current_history_length() returns the current number of items",
+            "# readline.get_history_item(index) returns the item at the given index",
+            "import readline",
+            "history_length = readline.get_current_history_length()",
+            "for i in range(1, history_length):",
+            "    print(readline.get_history_item(i)"
+        ]
+    },
+    {
+        "id": 46,
+        "description": "Python: Startup scripts for the interactive sessions",
+        "tags": [
+            "programming",
+            "python"
+        ],
+        "contents": [
+            "# If the environment variable PYTHONPATH points to a readable file",
+            "# commands in that file are executed before the prompt is given to the",
+            "# user in interactive mode",
+            "# e.g. export PYTHONPATH=$HOME/.pythonrc.py"
+        ]
+    },
+    {
+        "id": 45,
+        "description": "vim - switching between vim buffers",
+        "tags": [
+            "programming",
+            "productivity",
+            "vim",
+            "editor"
+        ],
+        "contents": [
+            ":buffers or :ls or :files - list open buffers",
+            ":bn, :bnext - go to next buffer",
+            ":bp, :bprev - go to previous buffer",
+            ":b <filename> - go to buffer with the given file name",
+            ":b ex - open buffer with filename starting with ex",
+            "Ctrl-6 - toggle between current and last buffer"
+        ]
+    },
+    {
+        "id": 44,
+        "description": "vim - search patterns using vimgrep",
+        "tags": [
+            "vim",
+            "productivity",
+            "editor",
+            "programming"
+        ],
+        "contents": [
+            ":vimgrep /{pattern}/[g][j] {filenames} - search pattern in given files and update quicklist (aka error list)",
+            "    - {pattern} follows vim regex pattern",
+            "    - g - return all matches",
+            "    - j - update quick list only. do not jump to the first match.",
+            "    vimgrep loads the file into memory, so can be slow for large files",
+            ":cn - go to next match in the quick list",
+            ":cp - go to previous match in the quick list",
+            ":cc n - go to nth match in the quick list",
+            ":clist [from] [to] - list all errors that are valid",
+            ":copen - open a window to show list of errors"
+        ]
+    },
+    {
+        "id": 43,
+        "description": "vim - misc shortcuts",
+        "tags": [
+            "vim",
+            "editor",
+            "productivity"
+        ],
+        "contents": [
+            "q: - (in command mode) to list the commands in chronological order. Allows editing too",
+            ":history - list commands from history table",
+            ":set <setting-name>? - show the current value of the given setting",
+            ":echo &<setting-name> - show the current value of the given setting",
+            ":echo &cmdwinheight - show the current value of cmdwinheight",
+            ":set! all - show all settings, one per line",
+            ":set cmdwinheight=10 - set the height of the command history window to 10. Default is 7"
+        ]
+    },
+    {
+        "id": 42,
+        "description": "git - revert changes to a single file",
+        "tags": [
+            "git",
+            "shortcuts"
+        ],
+        "contents": [
+            "git checkout [commit ID] -- /path/to/your/file # Defaults to HEAD if no commit ID is specified"
+        ]
+    },
+    {
+        "id": 41,
+        "description": "Python - register functions to be called at exit",
+        "tags": [
+            "python",
+            "programming"
+        ],
+        "contents": [
+            "import atexit",
+            "atexit.register(func1) # register func1 to be called when interpreter exits (some exceptions apply)",
+            "atexit.register(func2, arg1, arg2) # func2(arg1, arg2) will be called at exit",
+            "atexit.register(func3, arg1=\"foo\", arg2=\"bar\") # func3(arg1=\"foo\", arg2=\"bar\") will be called at exit",
+            "@atexit.register # use decorator to register functions. Can't be used with functions with args",
+            "def func4():",
+            "    print(\"Bye\")",
+            "# registered functions are called in last-in-first-out order"
+        ]
+    },
+    {
+        "id": 40,
+        "description": "Makefile - automatic variables within the recipe",
+        "tags": [
+            "programming",
+            "makefile"
+        ],
+        "contents": [
+            "# $@ - file name of the target of the rule",
+            "# $< - name of the first prerequisite",
+            "# $? - names of all prerequisites that newer than target",
+            "# $^ - name of all prerequisites",
+            "# NOTE: these variables are available only within the recipe of a target"
+        ]
+    },
+    {
+        "id": 39,
+        "description": "Python: pretty print python data structures",
+        "tags": [
+            "python",
+            "programming"
+        ],
+        "contents": [
+            "# pprint module provides a way to pretty print arbitrary",
+            "# data structures including the built in data types.",
+            "import pprint",
+            "pprint.print(mydict)",
+            "# pprint.print defaults to 80 columns per line.",
+            "# depth and indent level can be adjusted too"
+        ]
+    },
+    {
+        "id": 38,
+        "description": "shell - delimit by consecutive whitespaces/tabs in cut",
+        "tags": [
+            "programming",
+            "shell"
+        ],
+        "contents": [
+            "# -w option to cut filters the text using whitespaces and tabs as delimiters",
+            "# consecutive white spaces and tabs counted as single field",
+            "cut -w -f 4-6 # filter the lines by whitespaces/tab and output fields 4 through 6",
+            "# NOTE: This is available only in cut implementation conforming to (\u201cPOSIX.2\u201d)",
+            "# supported on macOS"
+        ]
+    },
+    {
+        "id": 37,
+        "description": "macOS - show emoji keyboard",
+        "tags": [
+            "macOS",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents": [
+            "Ctrl + Cmd + Spacebar -> to bring up emoji keyboard \ud83d\ude0e"
+        ]
+    },
+    {
+        "id": 36,
+        "description": "ssh - disable login banner",
+        "tags": [
+            "linux",
+            "ssh",
+            "productivity"
+        ],
+        "contents": [
+            "# create /home/$USER/.hushlogin to suppress ssh login banner for a particular user"
+        ]
+    },
+    {
+        "id": 35,
+        "description": "golang - discard all writes",
+        "tags": [
+            "programming",
+            "golang"
+        ],
+        "contents": [
+            "io.Discard is equivalent /dev/null",
+            "All writes to io.Discard succeeds without doing anything"
+        ]
+    },
+    {
+        "id": 34,
+        "description": "shell - get specific line in a file",
+        "tags": [
+            "programming",
+            "shell"
+        ],
+        "contents": [
+            "# there are multiple ways to do this. I find sed easier than others",
+            "# sed -n 'np' file - to get nth line a file",
+            "sed -n '10p' file # to get 10th line in a file"
+        ]
+    },
+    {
+        "id": 33,
+        "description": "shell - set the positional parameters",
+        "tags": [
+            "programming",
+            "shell"
+        ],
+        "contents": [
+            "# Set the values of the positional parameters to script, bash functions",
+            "# set foo to $1, bar to $2",
+            "set -- foo bar"
+        ]
+    },
+    {
+        "id": 32,
+        "description": "jq - filter keys with special characters",
+        "tags": [
+            "json",
+            "programming",
+            "tools",
+            "jq"
+        ],
+        "contents": [
+            "# If keys in json data contain special characters, the keys need to be enclosed in \"\" in the jq filter string",
+            "# e.g. ",
+            "kubectl get secrets cluster-xyz -o json | jq -r '.data.\"tls.crt\"' | base64 --decode"
+        ]
+    },
+    {
+        "id": 31,
+        "description": "tmux - send commands to multiple panes at the same time",
+        "tags": [
+            "tmux",
+            "programming",
+            "tools",
+            "shortcuts"
+        ],
+        "contents": [
+            "Prefix key + : - to bring command prompt",
+            ":setw synchronize-panes on - to turn on command synchronization",
+            ":setw synchronize-panes off - to turn off command synchronization",
+            "The default prefix is Ctrl-B. I use Ctrl-L"
+        ]
+    },
+    {
+        "id": 30,
+        "description": "du - display the size of directories, skip subdirectories",
+        "tags": [
+            "linux",
+            "shell",
+            "commands",
+            "tools"
+        ],
+        "contents": [
+            "# du displays the size of the subdirectories as well by default.",
+            "du -sch dir1 dir2 #display size of dir1 and dir2 and the grand total in human readable form"
+        ]
+    },
+    {
+        "id": 29,
+        "description": "macOS/finder - keyboard shortcuts",
+        "tags": [
+            "macOS",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents": [
+            "Cmd + Shift + N - to create a new folder",
+            "Cmd + Delete - to delete a file or folder"
+        ]
+    },
+    {
+        "id": 28,
+        "description": "gdb - dump backtrace of all threads",
+        "tags": [
+            "programming",
+            "gdb",
+            "debugging"
+        ],
+        "contents": [
+            "#dump backtrace of all threads",
+            "thread apply all backtrace"
+        ]
+    },
+    {
+        "id": 27,
+        "description": "git - undo uncommited local changes to a specific file",
+        "tags": [
+            "programming",
+            "git"
+        ],
+        "contents": [
+            "# To undo uncommitted local changes to a specific file.",
+            "# This command overwrites the current version of filename",
+            " with the version from remote branch",
+            "<filename> is specified as per path spec. See https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec",
+            "# git checkout -- filename"
+        ]
+    },
+    {
+        "id": 26,
+        "description": "git - add a remote branch and set local branch to push to new remote branch",
+        "tags": [
+            "programming",
+            "git"
+        ],
+        "contents": [
+            "# The workflow goes like this",
+            "# git checkout -b <a_new_branch>",
+            "# make edits..make commits..time to push to remote branch and/or create PR",
+            "# git push --set-upstream origin <a_new_branch>",
+            "# git push"
+        ]
+    },
+    {
+        "id": 25,
+        "description": "git - deleting a branch",
+        "tags": [
+            "programming",
+            "git"
+        ],
+        "contents": [
+            "git branch -d <branch> # to delete local branch",
+            "git branch -D <branch> # to force delete local branch",
+            "git push <remote> --delete <remote-branch-name> # to delete remote branch.",
+            "# e.g. git push origin --delete pr123456"
+        ]
+    },
+    {
+        "id": 24,
+        "description": "vim - open multiple files in tabs",
+        "tags": [
+            "programming",
+            "vim",
+            "editor",
+            "productivity"
+        ],
+        "contents": [
+            "# use option -p with vim to open multiple files in tabs",
+            "vim -p file1 file2 file3"
+        ]
+    },
+    {
+        "id": 23,
+        "description": "docker - display only repo and tag info in docker images",
+        "tags": [
+            "docker",
+            "commands",
+            "tools"
+        ],
+        "contents": [
+            "# to display only image repo and tag information in 'docker images' command",
+            "# useful when including the output in other commands such as docker run",
+            "docker images --format '{{.Repository}}:{{.Tag}}'"
+        ]
+    },
+    {
+        "id": 22,
+        "description": "markdown - insert multi line quote",
+        "tags": [
+            "markdown",
+            "editor"
+        ],
+        "contents": [
+            "`>` - inserts a block quote in markdown.",
+            "Add two spaces at the end of line to make a multi line quote",
+            "> Stay hungry",
+            "> Stay foolish",
+            "will produce | Stay hungry Stay foolish",
+            "> Stay hungry  ",
+            "> Stay foolish  ",
+            "will produce",
+            "| Stay hungry",
+            "| Stay foolish"
+        ]
+    },
+    {
+        "id": 21,
+        "description": "valgrind - check mem leaks, double free, double free",
+        "tags": [
+            "c",
+            "programming",
+            "tools",
+            "valgrind"
+        ],
+        "contents": [
+            "valgrind --tool=memcheck --leak-check=yes --track-origins=yes <executable>"
+        ]
+    },
+    {
+        "id": 20,
+        "description": "tmux - reclaim the entire window during attach",
+        "tags": [
+            "tmux",
+            "terminal",
+            "productivity"
+        ],
+        "contents": [
+            "# After attaching to a session, tmux can sometimes fill the window with L-shaped ",
+            "# ....., leaving very little space for the actual client. This can happen if the ",
+            "# session is attached elsewhere. Use the flag -d to detach the existing session.",
+            "$ tmux attach-session -d"
+        ]
+    },
+    {
+        "id": 19,
+        "description": "Python - Get current time with timezone info",
+        "tags": [
+            "python",
+            "programming",
+            "datetime"
+        ],
+        "contents": [
+            "# Use pytz.timezone to add timezone info when dealing with datetime",
+            ">>> from datetime import datetime",
+            ">>> from pytz import timezone",
+            ">>> now = datetime.now(tz=timezone(\"EST\"))",
+            ">>> now",
+            "datetime.datetime(2022, 11, 11, 12, 6, 3, 779069, tzinfo=<StaticTzInfo 'EST'>)",
+            ">>> # another way to do the same",
+            "... ",
+            ">>> eastern = timezone(\"US/Eastern\")",
+            ">>> now = eastern.localize(datetime.now())",
+            ">>> now.tzinfo",
+            "<DstTzInfo 'US/Eastern' EST-1 day, 19:00:00 STD>"
+        ]
+    },
+    {
+        "id": 18,
+        "description": "Python - using pathlib for quick actions with files",
+        "tags": [
+            "python",
+            "programming",
+            "io"
+        ],
+        "contents": [
+            "# for simple actions like opening a file and just reading some text",
+            "# or writing few lines of text in a string, pathlib.Path can be a great option",
+            "# it abstracts away the usual workflow of opening a file, writing and closing",
+            "# into convenient functions",
+            ">>> from pathlib import Path",
+            ">>> myfile = Path(\"foobar.txt\")",
+            ">>> myfile.write_text(\"foobar\")",
+            "6",
+            ">>> myfile.read_text()",
+            "'foobar'"
+        ]
+    },
+    {
+        "id": 17,
+        "description": "shell - list only directories",
+        "tags": [
+            "shell",
+            "commands",
+            "shortcuts",
+            "linux"
+        ],
+        "contents": [
+            "# ls */ - lists directories recursively",
+            "# ls -d */ - lists only directories in current directory",
+            "ls -d */",
+            "# another way to do this, but in long listing format",
+            "# ls -l | grep ^d"
+        ]
+    },
+    {
+        "id": 16,
+        "description": "tools - list contents of a tar/tar.gz archive",
+        "tags": [
+            "shell",
+            "tools",
+            "productivity",
+            "shortcuts"
+        ],
+        "contents": [
+            "# to simply list contents of a tar archive without unarchiving it",
+            "tar -tvf file.tar # list conents of .tar file",
+            "tar -tzvf file.tar.gz # list contents of zipped tar",
+            "tar -jtvf file.tar.bz2 # list contents of tar.bz2 file",
+            "tar -tvf file.tar '*.cpp' # search for .cpp files in the archive"
+        ]
+    },
+    {
+        "id": 15,
+        "description": "Python - read contents pointed by a URL",
+        "tags": [
+            "python",
+            "programming"
+        ],
+        "contents": [
+            "# read contents of a link using requests",
+            "r = requests.get(\"https://someurl.com/somefile.json\")",
+            "# gets a response object",
+            "r.text # to read the contents as a text",
+            "r.json() # to return a json dict of the data pointed by the url"
+        ]
+    },
+    {
+        "id": 14,
+        "description": "Python - validate a string is valid URL or not",
+        "tags": [
+            "python",
+            "programming",
+            "productivity"
+        ],
+        "contents": [
+            "# using validators package",
+            "import validators",
+            "# validators.url() returns true if the url is valid",
+            "is_url = validators.url(\"https://someurl.com\")"
+        ]
+    },
+    {
+        "id": 13,
+        "description": "Python - process shell command result line by line",
+        "tags": [
+            "python",
+            "programming",
+            "shell",
+            "snippets"
+        ],
+        "contents": [
+            ">>> import subprocess",
+            ">>> cmd_result = subprocess.run(\"ls -l\".split(), text=True, capture_output=True)",
+            ">>> # split the output by newline to process each line",
+            ">>> for line in cmd_result.stdout.split(\"\n\"):",
+            "...     if line.startswith('d'):",
+            "...             # processing only directories",
+            "...             print(line)",
+            "...",
+            "drwxr-xr-x 1 root root 4096 Nov  9 08:42 man1",
+            "drwxr-xr-x 2 root root 4096 Nov  9 08:42 man5",
+            "drwxr-xr-x 2 root root 4096 Nov  9 08:07 man8"
+        ]
+    },
+    {
+        "id": 12,
+        "description": "shell - get absolute path of a link",
+        "tags": [
+            "bash",
+            "shell",
+            "shortcuts",
+            "programming"
+        ],
+        "contents": [
+            "$ readlink -f path-to-link # recursively resolve and return the canononical path of the link"
+        ]
+    },
+    {
+        "id": 11,
+        "description": "vscode - cmd shortcut to jump to bracket",
+        "tags": [
+            "vscode",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents": [
+            "\"Cmd + Shift + \\\" to go to the end / beginning of a code block",
+            "If the middle of a block, it jumps to the end of the block."
+        ]
+    },
+    {
+        "id": 10,
+        "description": "C - Generate random int",
+        "tags": [
+            "c",
+            "cpp",
+            "snippets"
+        ],
+        "contents": [
+            "// Generate random ints with rand() in the range of 0 to RAND_MAX (defined in stdlib.h)",
+            "// RAND_MAX is set to 2147483647 in case of mac",
+            "printf(\"a random number:%d\", rand());",
+            "// Seed with srand(unsigned seed_value), often the seed_value is the current timestamp",
+            "srand(time(NULL));",
+            "printf(\"another random number:%d\", rand());"
+        ]
+    },
+    {
+        "id": 9,
+        "description": "shell - sum numbers from stdin",
+        "tags": [
+            "shell",
+            "commands",
+            "tools"
+        ],
+        "contents": [
+            "# Ways to sum up numbers from stdin or from piped output from previous commands",
+            "# Using paste command",
+            "$ echo somefile | paste -s -d+ | bc",
+            "$ cat nums | paste -sd+ - | bc",
+            "# using awk.. substitute $1 with the actual column number",
+            "$ cat nums | awk '{sum += $1} END {print sum}'"
+        ]
+    },
+    {
+        "id": 8,
+        "description": "cpp - google style guide - typenames, filenames, variables",
+        "tags": [
+            "cpp",
+            "programming",
+            "code"
+        ],
+        "contents": [
+            "# filenames - all lower case and can include `-` or `_`. e.g. my_class.h my_class.cc",
+            "# typenames - in PascalCase - applies to classes, structs, type alias, enums and type templates",
+            "# variables - all lower case, words separated by `_`. local variables, function parameters, class members"
+        ]
+    },
+    {
+        "id": 7,
+        "description": "vim - open/close folded text in vimdiff",
+        "tags": [
+            "vim",
+            "tools",
+            "keyboard",
+            "shortcuts",
+            "programming"
+        ],
+        "contents": [
+            "# zo - to open folded text",
+            "# zc - to close folded text"
+        ]
+    },
+    {
+        "id": 6,
+        "description": "jq - query to create new json with fields from another json",
+        "tags": [
+            "jq",
+            "tools",
+            "programming"
+        ],
+        "contents": [
+            "$ jq '{(.foo) : .bar}' test.json # use the value of field \"foo\" as the key and value of \"bar\" as the value for new object",
+            "# () syntax is used to create a key for the resulting object",
+            "$ jq '{\"name\" : .name, \"age\": .age}' test.json # create new object with keys \"name\" and \"age\""
+        ]
+    },
+    {
+        "id": 5,
+        "description": "go - split and join strings",
+        "tags": [
+            "golang",
+            "programming",
+            "shortcuts"
+        ],
+        "contents": [
+            "// Use strings package to split and join strings",
+            "sentence := \"Minus eos autem rerum voluptas qui quisquam\"",
+            "words := strings.Split(sentence, \" \")",
+            "fmt.Println(strings.Join(words, \",\"))",
+            "// to split strings by whitespace",
+            "fmt.Println(strings.Fields(\"this is a space separated sentence\"))"
+        ]
+    },
+    {
+        "id": 4,
+        "description": "vim - enable syntax foldmethod",
+        "tags": [
+            "vim",
+            "keyboard",
+            "shortcuts",
+            "programming"
+        ],
+        "contents": [
+            "`:set foldmethod?` to show the current fold method // default is manual",
+            "`:set foldmethod=syntax` to quickly see an outline of the symbols and functions",
+            "`zx` - to open the current fold and close other folds",
+            "`zM` to close the all open folds",
+            "`zR` to open all the folds"
+        ]
+    },
+    {
+        "id": 3,
+        "description": "vim - shortcut to access file path and directory",
+        "tags": [
+            "vim",
+            "keyboard",
+            "shortcuts",
+            "programming"
+        ],
+        "contents": [
+            "`:Vexplore` to open the explorer at the directory of the current file in vertical window",
+            "`%` shorthand to get the current file name, path and extension.",
+            "`:echo expand('%')` - displays the relative path of the file. Apply modifiers on top of that get different fields",
+            "`echo expand('%:p')` - displays the absolute path of the file",
+            "`echo expand('%:t')` - displays just the name of the file",
+            "`echo expand('%:h')` - displays the directory name of the file",
+            "// This can also be applied in the shell commands executed from vim.",
+            "`!ls %:h` - runs `ls` command on the directory of the current file"
+        ]
+    },
+    {
+        "id": 2,
+        "description": "vim - equally size windows",
+        "tags": [
+            "vim",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents": [
+            "Ctrl+W = // to equally size the open windows"
+        ]
+    },
+    {
+        "id": 1,
+        "description": "vim - open command history",
+        "tags": [
+            "vim",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents": [
+            "q: // to open command history in editor just like :explore and :Vexplore"
+        ]
+    }
+]

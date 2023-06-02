@@ -4,10 +4,9 @@ Just getting started with the go code. swagger, openapi spec just for reference.
 
 ## What next?
 
-- [ ] add an endpoint for `notes/{id}`
+- [x] publish it in Cloud Functions or Cloud Run
 - [ ] add unit tests
-- [ ] publish it in Cloud Functions or Cloud Run
-- [ ] see if the test data can be pulled from cloud store
+- [ ] Pull the notes data directly from the source
+  - [ ] currently using a static note
 - [ ] add a README file
-- [ ] add comments
 - [ ] add logging, make sure format matches google cloud logging

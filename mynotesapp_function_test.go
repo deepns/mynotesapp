@@ -1,4 +1,4 @@
-package main
+package myappnotes_function
 
 import (
 	"encoding/json"
@@ -41,14 +41,14 @@ func TestLoadNotes(t *testing.T) {
 }
 
 func TestFilterNotesByTags(t *testing.T) {
-	notes := []Note{
+	notes = []Note{
 		{ID: 1, Description: "Note 1", Tags: []string{"tag1", "tag2"}, Contents: []string{"line1", "line2"}},
 		{ID: 2, Description: "Note 2", Tags: []string{"tag1", "tag3"}, Contents: []string{"line1", "line2"}},
 		{ID: 3, Description: "Note 3", Tags: []string{"tag2", "tag3"}, Contents: []string{"line1", "line2"}},
 	}
 
 	// Filter notes by "tag1"
-	filtered := filterNotesByTags(notes, []string{"tag1"})
+	filtered := filterNotesByTags([]string{"tag1"})
 	expected := []Note{
 		{ID: 1, Description: "Note 1", Tags: []string{"tag1", "tag2"}, Contents: []string{"line1", "line2"}},
 		{ID: 2, Description: "Note 2", Tags: []string{"tag1", "tag3"}, Contents: []string{"line1", "line2"}},
@@ -58,7 +58,7 @@ func TestFilterNotesByTags(t *testing.T) {
 	}
 
 	// Filter notes by "tag3"
-	filtered = filterNotesByTags(notes, []string{"tag3"})
+	filtered = filterNotesByTags([]string{"tag3"})
 	expected = []Note{
 		{ID: 2, Description: "Note 2", Tags: []string{"tag1", "tag3"}, Contents: []string{"line1", "line2"}},
 		{ID: 3, Description: "Note 3", Tags: []string{"tag2", "tag3"}, Contents: []string{"line1", "line2"}},
@@ -68,7 +68,7 @@ func TestFilterNotesByTags(t *testing.T) {
 	}
 
 	// Filter notes by "tag4" (non-existing tag)
-	filtered = filterNotesByTags(notes, []string{"tag4"})
+	filtered = filterNotesByTags([]string{"tag4"})
 	expected = []Note{}
 	if !reflect.DeepEqual(filtered, expected) {
 		t.Errorf("Filtered notes do not match expected. Expected: %v, Got: %v", expected, filtered)
