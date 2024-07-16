@@ -1,4 +1,124 @@
-[
+[    
+    {
+        "id": 101,
+        "description": "GoogleSheets - Convert currency for a particular date",
+        "tags":[
+            "google",
+            "sheets",
+            "functions",
+            "shortcuts"
+        ],
+        "contents":[
+            "`=INDEX(GOOGLEFINANCE(\"Currency:INRUSD\", \"price\", DATE(2024,7,14))) - Gives the closing date and exchange rate`",
+            "`INDEX(GOOGLEFINANCE(\"Currency:INRUSD\", \"price\", DATE(2024,7,14)), 2, 2) - To get the exchange rate only from the 2nd row and 2nd column"
+        ]
+    },
+    {
+        "id": 100,
+        "description": "vim - pull current word onto search or command line",
+        "tags":[
+            "vim",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents":[
+            "<Ctrl-R><Ctrl-W> - to pull <cword> onto search or command line",
+            "e.g. :vsplit <Ctrl-R><Ctrl-W> // will insert the name under cword."
+        ]
+    },
+    {
+        "id": 99,
+        "description": "vim - set markers",
+        "tags":[
+            "vim",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents":[
+            "m a - to set a marker at the current position",
+            "` a - to go to the marked position"
+        ]
+    },
+    {
+        "id": 98,
+        "description": "vim - filename completion",
+        "tags":[
+            "vim",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents":[
+            "In insert mode, press Ctrl-X followed by Ctrl-F to trigger filename completion",
+            "If the text under cursor is a path, filename completion will show the list of files under that path"
+        ]
+    },
+    {
+        "id": 97,
+        "description": "vim - line completion",
+        "tags":[
+            "vim",
+            "keyboard",
+            "shortcuts"
+        ],
+        "contents":[
+            "In insert mode, press Ctrl-X followed by Ctrl-L to trigger line completion",
+            "This will list all the lines matching the text entered in the current line",
+            "Scroll up/down to select the line and insert"
+        ]
+    },
+    {
+        "id": 96,
+        "description": "bash - shuffle lines of output with shuf utility",
+        "tags":[
+            "bash",
+            "commands",
+            "shell",
+            "tools"
+        ],
+        "contents":[
+            "# shuf command generates random permutations of input lines and writes to standard out",
+            "# some_command | shuf -n 1 # to select 1 random line from the output of some_command",
+            "# note: shuf is available as part of GNU CoreUtils package"
+        ]
+    },
+    {
+        "id": 95,
+        "description": "vim - resize split window panes",
+        "tags": [
+            "vim",
+            "keyboard",
+            "shortcuts",
+            "productivity"
+        ],
+        "contents": [
+            "# To resize the current pane up/down in a horizontal split",
+            "# Ctrl-W +/-",
+            "# To resize the current pane up/down by number of lines",
+            "# Ctrl-W <number> +/-",
+            "# To resize the current pane left/right in a vertical split",
+            "# Ctrl-W </>",
+            "# To resize the current pane left/right by number of columns",
+            "# Ctrl-W <number> </>"
+        ]
+    },
+    {
+        "id": 94,
+        "description": "tmux - resize panes with keyboard shortcuts",
+        "tags": [
+            "tmux",
+            "keyboard",
+            "shortcuts",
+            "productivity"
+        ],
+        "contents": [
+            "# To resize the current pane up/down/left/right",
+            "# Press prefix key followed by Modifier-key+Up/Down/Left/Right to resize in respective direction",
+            "# resizes by 5 rows/columns by default",
+            "# My prefix key is Ctrl+L (whereas Ctrl+B is the default). Modifier key is option key",
+            "# bindkey -r allows the key to be bound in repeat mode. So pressing twice M-Up after the prefix key (Ctrl+L) moves the pane up by 10 (2*5) rows",
+            "# bind-key -r    M-Up resize-pane -U 5"
+        ]
+    },
     {
         "id": 93,
         "description": "vscode - insert multi line cursor in mac",
