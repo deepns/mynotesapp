@@ -1,4 +1,21 @@
-[    
+[
+    {
+        "id": 102,
+        "description": "git - clear cached credentials",
+        "tags":[
+            "git",
+            "commands"
+        ],
+        "contents":[
+            "# To clear the cached credentials",
+            "# When encountered authentication issues and want to ensure that Git prompts ",
+            "you for credentials again, allowing you to enter updated or correct credentials.",
+            "`git credential-cache exit`",
+            "The git credential-cache exit command is part of Git's credential caching mechanism.",
+            "This command is used to terminate the credential cache daemon process that is running",
+            "in the background."
+        ]
+    }, 
     {
         "id": 101,
         "description": "GoogleSheets - Convert currency for a particular date",
